@@ -3,8 +3,8 @@ const chalk = require('chalk')
 const inquirer = require('inquirer')
 const {initModel} = require('./model')
  
-
-function getTitle(){
+//show title
+function getTitle(){ 
     return chalk.green(
         figlet.textSync(
             'Tip App',
@@ -16,6 +16,7 @@ function getTitle(){
     )
 }
 
+//to show the rectangle(table)
 function getTable(model){
     const {amount,tax,tip,total} = model
     return [
@@ -23,12 +24,14 @@ function getTable(model){
     ]
 }
 
+//join table and title, to export only one thing
 function allView(model){
     return{
     title: getTitle(),
     table: getTable(model)
 }}
 
+//to ask about the amount
 function inputForm_1(model){
     const {amount} = model
     const message = 'Amount?'
@@ -49,6 +52,7 @@ function inputForm_1(model){
     ])
 }
 
+//to ask about the tip percentage
 function inputForm_2(model){
     const {tax} = model
     const message = 'enter %tips'

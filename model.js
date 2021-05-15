@@ -1,4 +1,4 @@
-initModel = {
+initModel = { //Variables to be used throughout the exercise
     amount: 0,
     tax: 0,
     tip: 0,
